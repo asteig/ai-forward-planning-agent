@@ -14,7 +14,6 @@ class ActionLayer(BaseActionLayer):
         --------
         layers.ActionNode
         """
-        # TODO: implement this function
         for effectA in actionA.effects:
             
             for effectB in actionB.effects:
@@ -31,7 +30,6 @@ class ActionLayer(BaseActionLayer):
         --------
         layers.ActionNode
         """
-        # TODO: implement this function
         for effect in actionA.effects:
             
             for precondition in actionB.preconditions:
@@ -48,7 +46,6 @@ class ActionLayer(BaseActionLayer):
         layers.ActionNode
         layers.BaseLayer.parent_layer
         """
-        # TODO: implement this function
         for preconditionA in actionA.preconditions:
 
             for preconditionB in actionB.preconditions:
@@ -68,7 +65,6 @@ class LiteralLayer(BaseLiteralLayer):
         --------
         layers.BaseLayer.parent_layer
         """
-        # TODO: implement this function
         
         for actionA in self.parents[literalA]:
 
@@ -83,7 +79,6 @@ class LiteralLayer(BaseLiteralLayer):
 
     def _negation(self, literalA, literalB):
         """ Return True if two literals are negations of each other """
-        # TODO: implement this function
         if literalA == ~literalB and literalB == ~literalA:
             return True
         #raise NotImplementedError
@@ -144,7 +139,6 @@ class PlanningGraph:
         --------
         Russell-Norvig 10.3.1 (3rd Edition)
         """
-        # TODO: implement this function
         graph = self.fill()
 
         levelsum = 0
@@ -179,8 +173,6 @@ class PlanningGraph:
         -----
         WARNING: you should expect long runtimes using this heuristic with A*
         """
-        # TODO: implement maxlevel heuristic
-
         graph = self.fill()
 
         costs = []
@@ -208,8 +200,6 @@ class PlanningGraph:
         -----
         WARNING: you should expect long runtimes using this heuristic on complex problems
         """
-        # TODO: implement setlevel heuristic
-
         while not self._is_leveled:
             
             layer = self.literal_layers[-1]
